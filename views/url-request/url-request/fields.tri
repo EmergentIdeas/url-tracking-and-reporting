@@ -1,0 +1,37 @@
+
+<div class="ei-css-grid">
+	<label class="xs12 t8" class="name-label">
+		Title	
+		<input name="title" type="text" required />
+	</label>
+	<label class="xs12 t4">
+		Section #
+		<input name="sectionNumber" type="text" />
+	</label>
+	<label class="xs12">
+		Content
+		<textarea name="content" class="ckeditor"></textarea>
+	</label>
+	
+	<label class="xs12">
+		Conclusion
+		<textarea name="conclusion" class="ckeditor" ></textarea>
+	</label>
+
+	<label class="xs12">
+		References
+		<textarea name="references" class="ckeditor" ></textarea>
+	</label>
+	
+	<h3 class="xs12">
+		Meta Information
+	</h3>
+	<label class="xs6">
+		Description
+		<textarea name="metaDescription" ></textarea>
+	</label>
+	<label class="xs6">
+		Social Image
+		<input name="socialImage" type="text" class="picture-input-field" />
+	</label>
+</div>

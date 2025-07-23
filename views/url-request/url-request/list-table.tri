@@ -1,0 +1,25 @@
+
+__::$pretemplate__
+
+
+<h2>url-request</h2>
+
+<div class="ei-form">
+	<a href="__dreck.createUrl__">Add url-request</a>
+	<div class=" dreck-page url-request-rows">
+		<br />
+		<table class="listing dreck-listing-1">
+			<tr>
+				<th>
+					ID
+				</th>
+				<th>
+
+				</th>
+			</tr>
+			__focus::./list-row__
+		</table>
+	</div>
+</div>
+
+__::$posttemplate__

@@ -1,0 +1,45 @@
+<p>
+	All Data View Frame
+</p>
+
+<div class="all-data-view-frame">
+	<div class="header-options ei-form">
+		<label>
+			Month
+			<select name="month">
+				<option value=""> -- choose month -- </option>
+				<option value="1">Jan</option>
+				<option value="2">Feb</option>
+				<option value="3">Mar</option>
+				<option value="4">April</option>
+				<option value="5">May</option>
+				<option value="6">June</option>
+				<option value="7">July</option>
+				<option value="8">Aug</option>
+				<option value="9">Sept</option>
+				<option value="10">Oct</option>
+				<option value="11">Nov</option>
+				<option value="12">Dec</option>
+			</select>
+		</label>
+
+		<label>
+			Year
+			<input name="year" value="__new Date().getFullYear()__" />
+		</label>
+		<label>
+			Layout
+			<select name="layout">
+				<option value="by-user">By User</option>
+				<option value="by-resource">By Resource</option>
+			</select>
+		</label>
+		<button name="update-now">Update Now</button>
+	</div>
+	<div class="data-show">
+		
+	</div>
+
+
+
+</div>

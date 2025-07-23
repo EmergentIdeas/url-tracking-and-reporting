@@ -1,0 +1,15 @@
+
+__::$pretemplate__
+
+
+<h2>url-request</h2>
+<div class="ei-editable-sortable-tiles url-request-tiles">
+	<a href="__dreck.createUrl__">Add url-request</a>
+	<ul class="tiles" data-sort-url="__dreck.sortUrl__">
+	__focus::./tile__
+
+	</ul>
+</div>
+
+
+__::$posttemplate__
