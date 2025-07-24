@@ -1,5 +1,5 @@
 {
-	"name": "url-tracking-and-reporting",
+	"name": "@webhandle/url-tracking-and-reporting",
 	"version": "1.0.0",
 	"main": "server-lib/integrator.mjs",
 	"scripts": {
@@ -11,8 +11,8 @@
 		"client-js-browserify-build": "npm run client-js-pages-browserify-build",
 		"client-js-pages-browserify build": "npx browserify client-js/pages.cjs --debug | npx exorcist public/js/pages.cjs.map > public/js/pages.cjs",
 		"dev-less-watch": "onchange 'less/**/*.less' -- npm run less-build",
-		"dev-client-js-watch": "onchange 'client-lib/**/*js' 'client-js/**/*js' -- npm run client-js-build",
-		"dev-server-js-watch": "onchange 'server-lib/**/*js' 'server-js/**/*js' -- pm2 restart $npm_package_name-web",
+		"dev-client-js-watch": "npx webpack --config pages.webpack.cjs --watch",
+		"dev-server-js-watch": "onchange 'server-lib/**/*js' 'server-js/**/*js' -- pm2 restart url-tracking-and-reporting",
 		"start": "node ./web-server.js",
 		"testDebug": "node --inspect-brk node_modules/mocha/bin/mocha",
 		"bg": "parallelshell 'npm run dev-less-watch' 'npm run dev-client-js-watch'",
@@ -67,7 +67,7 @@
 		"README.md",
 		"/less/components.less",
 		"views/url-request",
-		"/public"
+		"views/*.mjs"
 	],
 	"browser": "client-lib/integrator.mjs",
 	"type": "module"

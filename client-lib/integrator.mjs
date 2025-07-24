@@ -1,57 +1,29 @@
-import sortable from 'sortablejs'
-if (!sortable.create && sortable.default) {
-	sortable = sortable.default
-}
 
 import '../views/load-browser-views.mjs'
 
 import RecordTable from '@webhandle/record-table'
 
 import setupDataService from './setup-data-service.mjs'
+import AllDataView from '../client-lib/all-data-view.mjs'
 
 
 
+let dataService = null
 
 export default function integrate() {
-	let dataService = setupDataService()
-
-	
-
-
-
-
-/**
- * Expects markup in the form of:
- * <div class="ei-editable-sortable-tiles">
- * 		<ul class="tiles" data-sort-url="/admin/hierarchies/sort">
- * 			<li class="tile" data-id="e0e5e574-4709-48d9-8df1-167af79f4b1e"> <!-- Where the value of data-id is database identifier of the object represented by the tile -->
- * 				<!-- Some markup here which displays the information about the tile -->
- * 			</li>
- * 		</ul>
- * </div>
- * 
- * 
- */
-	let tiles = document.querySelector('.ei-editable-sortable-tiles.url-request-tiles .tiles')
-	if (tiles) {
-		let dd = sortable.create(tiles, {
-			handle: '.move',
-			onSort: function (evt) {
-				var count = 0;
-				var order = {}
-				let lis = evt.target.querySelectorAll('li')
-				for (let li of lis) {
-					order[li.getAttribute('data-id')] = count++
-				}
-				let url = evt.target.getAttribute('data-sort-url')
-				fetch(url, {
-					method: "POST", // *GET, POST, PUT, DELETE, etc.
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(order) // body data type must match "Content-Type" header
-				})
-			}
-		})
+	if (!dataService) {
+		dataService = setupDataService()
+		let frame = document.querySelector('#url-request-and-tracking-all-data-view')
+		if (frame) {
+			let dataService = window.webhandle.services.webhandle['url-tracking-and-reporting'].urlRequest
+			let one = new AllDataView({
+				dataService: dataService
+			})
+			one.render()
+			one.appendTo(frame)
+		}
 	}
+
+
+	return dataService
 }

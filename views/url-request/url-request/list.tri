@@ -2,13 +2,10 @@
 __::$pretemplate__
 
 
-<h2>url-request</h2>
-<div class="ei-editable-sortable-tiles url-request-tiles">
-	<a href="__dreck.createUrl__">Add url-request</a>
-	<ul class="tiles" data-sort-url="__dreck.sortUrl__">
-	__focus::./tile__
+<h2>View User Engagement</h2>
 
-	</ul>
+<div id="url-request-and-tracking-all-data-view">
+	
 </div>
 
 
