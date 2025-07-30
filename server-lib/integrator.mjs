@@ -18,7 +18,7 @@ let templates = {}
 export default function integrate(dbName, options) {
 	let opt = Object.assign({
 		collectionName: 'urlRequest',
-		templateDir: 'node_modules/url-tracking-and-reporting/views',
+		templateDir: 'node_modules/@webhandle/url-tracking-and-reporting/views',
 		mountPoint: '/admin/@webhandle/url-tracking-and-reporting',
 		allowedGroups: ['administrators'],
 		dreckOptions: {},
